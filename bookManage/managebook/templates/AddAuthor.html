@@ -1,0 +1,31 @@
+{% load staticfiles %}  
+<html>
+<head>
+	<title>作者添加</title>
+</head>
+<body background= "{% static "images/zjp.jpg" %}" alt="Picture of book" >
+    <a href="/Manage/">返回主界面</a><a href="/AddAuthor/">>>作者添加</a>
+     <h1 align="center"><b>添加作者信息</h1>
+	<hr/><hr/>
+
+	<form action = "/AddAuthorResult/" method = "post">
+	<table align="center">
+        <tr>
+        	<td><b>作者编号：</td>
+        	<td><input type = "text" name = "AuthorID"></td></tr>
+		<tr>
+        	<td><b>姓名：</td>
+        	<td><input type = "text" name = "Name"></td></tr>
+		<tr>
+        	<td><b>年龄：</td>
+        	<td><input type = "text" name = "Age"></td></tr>
+            <tr>
+        	<td><b>国家：</td>
+        	<td><input type = "text" name = "Country"></td>  </tr>
+            <tr>
+    		<td> </td>
+   		</tr><tr align="center"><td colspan="2">
+    	    <input type="submit" value="点击添加"></td></tr>
+ </form>
+</body>
+</html>

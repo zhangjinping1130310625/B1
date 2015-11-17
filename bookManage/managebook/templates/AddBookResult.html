@@ -1,0 +1,38 @@
+{% load staticfiles %}  
+<html>
+<head>
+	<title>添加图书结果</title>
+</head>
+<body background= "{% static "images/zjp.jpg" %}" alt="Picture of book" >
+    <a href="/Manage/">返回主界面</a>>>
+    <a href="/AddBook/">返回图书添加</a>>>
+    <a href="/AddBookResult/">返回图书添加</a>
+        
+   <table align="center">
+        {% if IsBook %} 
+                <tr align = "center"><td>
+                    <h1><div style="color:red">图书《{{Book}}》添加（更新）成功</h1>
+                </tr></td>
+                <tr align = "center">
+                <td colspan="2">
+                <form action="/AddBookResult/">
+		           <p><input type="submit"  value = "点击重新添加"/></p>
+	          </form></td></tr>
+                <tr align = "center">
+                <td colspan="2">
+                <form action="/Manage/">
+		           <p><input type="submit"  value = "点击返回主页"/></p>
+	          </form> </td> </tr>
+        {% else %}
+            <tr align = "center"><td>
+                <h1><div style="color:red">该书的作者不存在，请先添加作者</h1>
+            </tr></td>
+            <tr align = "center">
+                <td colspan="2">
+                <form action="/AddAuthor/">
+		           <p><input type="submit"  value = "点击添加作者"/></p>
+	          </form></td></tr>
+        {% endif %}
+    </table>
+</body>
+</html>

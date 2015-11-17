@@ -1,0 +1,25 @@
+{% load staticfiles %}  
+<html>
+<head>
+    <title>删除结果</title>
+</head>
+<body background= "{% static "images/zjp.jpg" %}" alt="Picture of book" >
+
+    <a href="/Manage/">返回主界面</a>>>
+    <a href="/ShowBook/">返回图书目录</a>>> <a >删除结果</a>
+    <hr/>
+      <hr/>
+    <table align="center">
+    <tr align = "center"><td>
+     <h1><div style="color:red">图书《{{book.Title}}》已经删除</h1>
+     </tr></td>
+     <tr align = "center">
+    <td colspan="2">
+     <form action="/ShowBook/">
+     <p><input type="submit"  value = "点击返回"/></p>
+     </form></td></tr>
+     <tr align = "center">
+    </table>
+
+</body>
+</html>

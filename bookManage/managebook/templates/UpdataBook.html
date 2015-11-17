@@ -1,0 +1,42 @@
+{% load staticfiles %}  
+<html>
+<head>
+	<title>图书信息更新</title>
+</head>
+<body background= "{% static "images/zjp.jpg" %}" alt="Picture of book" >
+	<a href="/manage/">返回主界面</a>>>
+	<a href="/searchAuthor/">返回图书目录</a>>>
+	<a>图书信息更新</a>
+	<table align="center">
+		<tr><td><h1>《{{book.Title}}》详细信息更新操作</h1></td></tr>
+            <hr/><hr/><tr align="center">
+	     <td colspan="2"><b>图书原始信息：</td></tr>
+           <tr><td>书名：{{book.Title}}</td></tr>
+		<tr><td>ISBN：{{book.ISBN}}</td></tr>
+		<tr><td>作者编号：{{book.AuthorID}}</td></tr>
+		<tr><td>出版社：{{book.Publisher}}</td></tr>
+		<tr><td>出版日期：{{book.PublishDate}}</td></tr>
+		<tr><td>价格：{{book.Price}}</td></tr>
+	<form action = "/AddBookResult/" method = "post">
+	   <table align="center">
+        <tr><td><b>输入更改信息:</td></tr>
+        <tr><td><b>ISBN：</td>
+        	<td><input type = "text" name = "ISBN"></td>
+		</tr><tr><td><b>书名：</td>
+        	<td><input type = "text" name = "Title"></td>
+		</tr><tr><td><b>作者编号：</td>
+        	<td><input type = "text" name = "AuthorID"></td>
+        </tr><tr><td><b>出版社：</td>
+        	<td><input type = "text" name = "Publisher"></td>
+        </tr><tr><td><b>出版日期：</td>
+        	<td><input type = "date" name = "Publishdate"></td>
+        </tr><tr><td><b>价格：</td>
+        	<td><input type = "text" name = "Price"></td>
+        </tr><tr><td> </td></tr>
+		<tr align="center"><td colspan="2">
+    	    <input type="submit" value="点击更新"></td></tr>
+   		{% csrf_token %}
+    </form>
+</table>
+</body>
+</html>

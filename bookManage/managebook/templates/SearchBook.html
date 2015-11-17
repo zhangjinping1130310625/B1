@@ -1,0 +1,22 @@
+{% load staticfiles %}  
+<html>
+<head>
+	<title>图书查询</title>
+</head>
+<body background= "{% static "images/zjp.jpg" %}" alt="Picture of book">
+
+  <a href="/Manage/">返回主界面</a><a href="/SearchBook/"> >>图书查询</a>
+  <h1 align="center">按作者查询</h1>
+	<form action = "/SearchResult/" method = "get">
+	<table align="center">
+      <tr>
+      <td><b>输入作者姓名：</td>
+      <td><input type = "text" name = "AuthorName"></td>
+   	<td colspan="2">
+	<input type="submit" value="点击搜索">
+   	</td>
+   	</tr>
+     </form>
+
+</body>
+</html>

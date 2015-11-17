@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<html>
+<head>
+      <meta charset="utf-8">
+	<title>主页面</title>
+</head>
+<body background= "{% static "images/zjp.jpg" %}" alt="Picture of book" >
+
+	<h1 align="center">欢迎使用图书管理系统</h1>
+      <hr/>
+      <hr/>
+<table align = "center">
+<tr>
+<td colspan="2">
+
+      <form  action = "/ShowBook/" >
+      <p> <input type="submit" style="width:300px;height:80px" value = "图书目录"/> </p> 
+      </form>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+      <form action="/SearchBook/">
+		<p><input type="submit" style="width:300px;height:80px" value = "图书查询"/></p>
+	</form>
+</td>
+</tr>
+<tr>
+<td>
+	<form  action="/AddBook/">
+		<p> <input type="submit" style="width:145px;height:30px" value = "图书添加"/></p>
+	</form>
+</td>
+<td>
+	<form  action="/AddAuthor/">
+		<p><input type="submit" style="width:145px;height:30px" value = "作者添加"/></p>
+	</form>
+</td>
+</tr>
+
+ </table>    
+</body>
+</html>

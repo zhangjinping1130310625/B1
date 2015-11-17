@@ -1,0 +1,31 @@
+{% load staticfiles %}  
+<html>
+<head>
+	<title>图书添加</title>
+</head>
+<body background= "{% static "images/zjp.jpg" %}" alt="Picture of book" >
+    <a href="/Manage/">返回主界面</a><a href="/AddBook/">>>图书添加</a>
+
+
+      <h1 align="center"><b>添加图书信息</h1>
+      <hr/><hr/>
+	<form action = "/AddBookResult/" method = "post">
+	<table align="center">
+        <tr><td><b>ISBN：</td>
+        	<td><input type = "text" name = "ISBN"></td></tr>
+           <tr><td><b>书名：</td>
+        	<td><input type = "text" name = "Title"></td></tr>
+		<tr><td><b>作者编号：</td>
+        	<td><input type = "text" name = "AuthorID"></td></tr>
+          <tr><td><b>出版社：</td>
+        	<td><input type = "text" name = "Publisher"></td></tr>
+           <tr><td><b>出版日期：</td>
+        	<td><input type = "date" name = "Publishdate"></td></tr>
+           <tr><td><b>价格：</td>
+        	<td><input type = "text" name = "Price"></td></tr>
+        <tr><td> </td></tr>
+		<tr align="center"><td colspan="2">
+    	    <input type="submit" value="点击添加"></td></tr>
+</form>
+</body>
+</html>

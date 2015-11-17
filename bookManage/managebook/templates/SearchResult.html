@@ -1,0 +1,53 @@
+{% load staticfiles %} 
+<head>
+    <meta charset="utf-8">
+    <title>查询结果</title>
+</head>
+<body background= "{% static "images/zjp.jpg" %}" alt="Picture of book" >
+    <a href="/Manage/">返回主界面</a><a href="/SearchBook/"> >>图书查询</a> >>
+    <a href="/SearchResult/">查询结果</a>
+    <h1 align='center'>图书查询结果 </h1>
+<hr/>
+<hr/>
+
+  
+<table align="center" width="300px" bgcolor="#F0FFFF" border='1' >
+	{% if tag%}
+	   <tr><td> 作者为:{{person}}</td></tr>
+    	   {% if  bookname %}
+              <tr >  <td>  <FONT face=黑体 color=blue size=4> 图书目录</FONT> ：</td>
+              <td colspan="2">   <FONT face=黑体 color=blue size=4> 操作</FONT></td> </tr>
+               {% for book  in  bookname %}
+                      <tr>  
+                      <td><a  href="InformationBook/{{book.ISBN}}"> {{book.Title}}</a> </td>
+                      <td><a  href="UpdataBook/{{book.ISBN}}">  更新 </a></td>
+                      <td><a  href="DeleteBook/{{book.ISBN}}">  删除 </a></td>
+                      </tr> 
+               {% endfor%}
+         {% else%}
+              <tr align="center"><td>此作者没有相关书籍</td></tr>
+         {%endif%}	
+	{% else%}
+	   <tr align="center" ><td>此作者不存在</td></tr>
+      {% endif%}
+    </table>
+<br>
+<br>
+<form action="/SearchBook/" align="center">
+    <input type="submit"  style="width:80px;height:30px" value= "返回上一页" /> 
+</form>
+</body>
+</html>   
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+{% load staticfiles %}  
+<html>
+<head>
+	<title>图书目录</title>
+</head>
+<body background= "{% static "images/zjp.jpg" %}" alt="Picture of book" >
+    <a href="/Manage/">返回主界面</a><a href="/ShowBook/">>>图书目录</a>
+
+      <h1 align="center"><b>图书目录</h1>
+      <hr/><hr/>
+      {% if  allbooks %}
+     <table  align="center"  width="300px" bgcolor="#F0FFFF" border='1'>
+       <tr ><td> <FONT face=黑体 color=blue size=4> 图书目录</FONT> ：</td>
+       <td colspan="2">   <FONT face=黑体 color=blue size=4> 操作</FONT></td></tr> 
+           {% for book  in  allbooks%}
+          <tr>  
+              <td> <a  href="InformationBook/{{book.ISBN}}"> {{book.Title}}</a>  </td>
+              <td><a  href= "UpdataBook/{{book.ISBN}}">  更新 </a> </td>
+              <td><a  href="DeleteBook/{{book.ISBN}}">  删除 </a> </td>
+           </tr>  
+            {% endfor%}
+      </table> 
+   {%endif%} 
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<head>
+<meta charset="utf-8">
+<title>图书详情</title>
+</head>
+<body background= "{% static "images/zjp.jpg" %}" alt="Picture of book"  >
+<a href="/Manage/">返回主界面</a>>>
+<a href="/ShowBook/">返回图书目录</a>>>
+<a>图书详情</a>
+<h1 align='center'> 图书详情 </h1>
+<hr/>
+<hr/>
+<table   align='center'  border='1'>
+	<tr>  <td> 书名:</td>  <td> {{book.Title}}</td>       </tr>
+    <tr>  <td> ISBN:</td>  <td> {{ book.ISBN}}</td>       </tr>
+    <tr>  <td> 出版社:</td>  <td> {{ book.Publisher}}</td>       </tr>
+    <tr>  <td> 出版日期:</td>  <td> {{ book.PublishDate}}</td>       </tr>
+	<tr>  <td> 价格:</td>  <td> {{ book.Price}}</td>       </tr>
+	<tr>  <td colspan="2"  >  
+      <FONT face=黑体 color=blue >---------作者详情-----------</FONT> </td>  </tr>
+    <tr>  <td> 作者姓名:</td>  <td> {{ author.Name}}</td>       </tr>
+    <tr>  <td> 作者编号:</td>  <td> {{ author.AuthorID}}</td>       </tr>
+    <tr>  <td> 作者国籍:</td>  <td> {{ author.Country}}</td>  </tr>
+    <tr>  <td> 作者年龄:</td>  <td> {{ author.Age}}</td>      </tr>
+   </tr>
+</table>
+<br>
+<br>
+<form action='/ShowBook/' align='center'>
+   <input type='submit' value='返回上一页'/> 
+<form>
+
+</body>
+</html>
