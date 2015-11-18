@@ -2,11 +2,6 @@ from django.shortcuts import render_to_response
 from . models import Author,Book
 # Create your views here.
 
-def Manage(request):
-    return render_to_response('Manage.html')
-    
-def SearchBook(request):
-    return render_to_response('SearchBook.html')
     
 def AddBook(request):
     return render_to_response('AddBook.html')
