@@ -3,7 +3,7 @@ from . models import Author,Book
 # Create your views here.
 
 def Manage(request):
-    return render_to_response('Manage.html')
+  
     
 def SearchBook(request):
     return render_to_response('SearchBook.html')
