@@ -14,28 +14,6 @@ def AddBook(request):
 def AddAuthor(request):
     return render_to_response('AddAuthor.html')
     
-def AddAuthorResult(request):
-    if request.POST:
-        author = Author()
-        aID = request.POST["AuthorID"]
-        allauthors = Author.objects.all()
-        team = 0
-        for authors in allauthors:
-            if(aID == authors.AuthorID):
-                 team = team + 1
-        if(team):
-            tag = 1
-        else:
-            author.AuthorID = request.POST["AuthorID"]
-            author.Name = request.POST["Name"]
-            author.Age = request.POST["Age"]
-            author.Country = request.POST["Country"]
-            author.save()
-            tag = 0
-        return render_to_response('AddAuthorResult.html',
-                                  {'Name':author.Name ,'IsAuthor':tag})
-    else:
-        return render_to_response('AddAuthor.html')
         
 def AddBookResult(request):
     book = Book()
