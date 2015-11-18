@@ -18,7 +18,6 @@ urlpatterns = patterns('',
     url(r'^SearchResult/$',views.SearchResult),
     url(r'^ShowBook/$',views.ShowBook),
     url(r'InformationBook/(.+)/$',views.InformationBook),
-    url(r'UpdataBook/(.+)/$',views.UpdataBook),
-    url(r'DeleteBook/(.+)/$',views.DeleteBook),
+    
 )
 
